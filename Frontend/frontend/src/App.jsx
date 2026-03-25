@@ -1,0 +1,19 @@
+import { useState } from 'react'
+import './App.css'
+import { RouterProvider } from 'react-router'
+import { router } from './routes'
+import { AuthProvider } from './features/auth/auth.context'
+import { SongContextProvider } from './features/Home/song.context'
+
+function App() {
+
+  return (
+    <AuthProvider>
+      <SongContextProvider>
+        <RouterProvider router={router} />
+      </SongContextProvider>
+    </AuthProvider>
+  )
+}
+
+export default App
